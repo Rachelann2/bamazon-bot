@@ -41,6 +41,41 @@ const displayProducts = function () {
 
 const pullProduct = function () {
     inquirer
+        .prompt([
+            {
+                name: "ProductID",
+                type: "input",
+                message: "Enter the product ID for the product you want. ",
+
+                validate: function (value) {
+                    if (isNaN(value) === false) {
+                        return true;
+                    }
+
+                    return false;
+                }
+
+            },
+
+            {
+                name: "ProductUnits",
+                type: "input",
+                message: "How many units do you want? ",
+                validate: function (value) {
+                    if (isNaN(value) === false) {
+                        return true;
+                    }
+
+                    return false;
+                }
+
+
+            }
+
+
+        ]).then(function (inquirerResponse) {
+            if (err) throw err;
+        })
 }
 
 
